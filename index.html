@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style></style>
+</head>
+<body>
+
+  <h1>Real-Time Salinity Monitor</h1>
+
+  <div>
+    Current Salinity: <span id="current-salinity">0</span> PSU
+  </div>
+
+  <div>
+    Desired Salinity: <span id="desired-salinity">0</span> PSU
+  </div>
+
+  <div>
+    <label>Enter Desired Salinity (PSU):</label>
+    <input type="number" id="input" step="0.01">
+    <button type="button" onclick="clickButton()">Set Desired Salinity</button>
+  </div>
+
+  <script type="text/javascript" src="client.js">
+  </script>
+
+</body>
+</html>
