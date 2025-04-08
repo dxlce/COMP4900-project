@@ -1,13 +1,9 @@
 const currentSalinityElement = document.getElementById("current-salinity")
 
-const socket = new WebSocket('ws://localhost:3000', 'echo-protocol');
-
-socket.addEventListener('open', (event) => {
-    console.log("Connected to WS server")
-})
+// NOTE: Replace "localhost:3000" with IP address
+const socket = new WebSocket('ws://localhost:3000', "echo-protocol");
 
 socket.addEventListener('message', (event) => {
-    console.log("Message from server")
     
     data = JSON.parse(event.data)
 
@@ -16,14 +12,12 @@ socket.addEventListener('message', (event) => {
     }
 });
 
-// Handle WebSocket error
 socket.onerror = (error) => {
-  console.error('WebSocket error:', error);
-};
+  console.error("WebSocket error:", error);
+}
 
-// Handle WebSocket closure
 socket.onclose = () => {
-  console.log('WebSocket connection closed');
+  console.log("WebSocket connection closed");
 };
 
 function clickButton()
